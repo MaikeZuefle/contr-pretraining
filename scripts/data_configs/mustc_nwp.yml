@@ -6,7 +6,7 @@ INPUTS_TEXT_LIST: "llava/dataset/INPUTS_TEXT_LIST.json"
 DATA:
 # WARNING!!! Don't forget the '-' before each dataset, must be parsed as a list
     - MuSTC_NWP: # same name of the dataset class
-        datapath: "/net/tscratch/people/plgzuefle/data/MustC_NWP/"
+        datapath: "data/MustC_NWP/"
         task: "ASR"
         languages: ["en-de"]
         partitions:

@@ -6,7 +6,7 @@ INPUTS_TEXT_LIST: "llava/dataset/INPUTS_TEXT_LIST.json"
 DATA:
 # WARNING!!! Don't forget the '-' before each dataset, must be parsed as a list
     - Giga_NWP: # same name of the dataset class
-        datapath: "/net/tscratch/people/plgzuefle/data/Giga_NWP"
+        datapath: "data/Giga_NWP"
         task: "ASR"
         languages: ["en"]
         partitions:

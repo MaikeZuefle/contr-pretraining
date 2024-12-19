@@ -17,10 +17,10 @@ This repository contains the code used for this project. The codebase started as
 - [Codebase](#codebase)
 
 ## Install
-1. Clone this repository and navigate to the llava folder
+1. Clone this repository and navigate to the contr-pretraining folder
 ```bash
 git clone 
-cd llava
+cd contr-pretraining
 ```
 
 2. Install Dependencies

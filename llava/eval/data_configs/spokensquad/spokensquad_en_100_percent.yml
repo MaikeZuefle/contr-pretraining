@@ -6,7 +6,7 @@ INPUTS_TEXT_LIST: "llava/dataset/INPUTS_TEXT_LIST.json"
 DATA:
 # WARNING!!! Don't forget the '-' before each dataset, must be parsed as a list
     - Spoken_SQuAD: # same name of the dataset class
-        datapath: "/net/tscratch/people/plgzuefle/data/Spoken_SQuAD"
+        datapath: "data/Spoken_SQuAD"
         task: "SQA"
         languages: ["en"]
         partitions:
