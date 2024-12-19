@@ -1,0 +1,47 @@
+# conversation template
+# OUTPUTS_TEXT_LIST: "llava/dataset/OUTPUTS_TEXT_LIST.json"
+INPUTS_TEXT_LIST: "llava/dataset/INPUTS_TEXT_LIST.json"
+
+# data
+DATA:
+# WARNING!!! Don't forget the '-' before each dataset, must be parsed as a list
+    - MuSTC: # same name of the dataset class
+        datapath: "/net/tscratch/people/plgzuefle/data/MUSTC_v1.0/preprocessed_redone"
+        task: "ASR" # one task per dataset, you can duplicate the dataset and change the task
+        languages: ["en-de"]
+        partitions:
+            train: # the name of the partition of your dataset, could be any name, such as "train-other-500" or "my-custom-partition"
+                amount: ":100%"  # options: ":X%" or "X1:X2%"
+                min_duration: 1
+                max_duration: 45
+                destination: "train" # options: "train", "eval", "test"
+    - MuSTC: # same name of the dataset class
+        datapath: "/net/tscratch/people/plgzuefle/data/MUSTC_v1.0/preprocessed_redone"
+        task: "ST" # one task per dataset, you can duplicate the dataset and change the task
+        languages: ["en-de", "en-fr", "en-it", "en-es"]
+        partitions:
+            train: # the name of the partition of your dataset, could be any name, such as "train-other-500" or "my-custom-partition"
+                amount: ":100%"  # options: ":X%" or "X1:X2%"
+                min_duration: 1
+                max_duration: 45
+                destination: "train" # options: "train", "eval", "test"
+    - Spoken_SQuAD: # same name of the dataset class
+        datapath: "/net/tscratch/people/plgzuefle/data/Spoken_SQuAD"
+        task: "SQA"
+        languages: ["en"]
+        partitions:
+            train: # the name of the partition of your dataset, could be any name, such as "train-other-500" or "my-custom-partition"
+                amount: ":100%"  # options: ":X%" or "X1:X2%"
+                min_duration: 1
+                max_duration: 150
+                destination: "train" # options: "train", "eval", "test"
+    - MLS: # same name of the dataset class
+        datapath: "/net/tscratch/people/plgzuefle/data/mls_bigger_classification"
+        task: "META"
+        languages: ["en"]
+        partitions:
+            train: # the name of the partition of your dataset, could be any name, such as "train-other-500" or "my-custom-partition"
+                amount: ":100%"  # options: ":X%" or "X1:X2%"
+                min_duration: 1
+                max_duration: 120
+                destination: "train" # options: "train", "eval", "test"

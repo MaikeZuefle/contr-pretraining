@@ -1,0 +1,17 @@
+# conversation template
+# OUTPUTS_TEXT_LIST: "llava/dataset/OUTPUTS_TEXT_LIST.json"
+INPUTS_TEXT_LIST: "llava/dataset/INPUTS_TEXT_LIST.json"
+
+# data
+DATA:
+# WARNING!!! Don't forget the '-' before each dataset, must be parsed as a list
+    - MuSTC_NWP: # same name of the dataset class
+        datapath: "/net/tscratch/people/plgzuefle/data/MustC_NWP/"
+        task: "ASR"
+        languages: ["en-de"]
+        partitions:
+            train: # the name of the partition of your dataset, could be any name, such as "train-other-500" or "my-custom-partition"
+                amount: ":1%"  # options: ":X%" or "X1:X2%"
+                min_duration: 8
+                max_duration: 10
+                destination: "train" # options: "train", "eval", "test"

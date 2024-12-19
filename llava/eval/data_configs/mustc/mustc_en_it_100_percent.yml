@@ -1,0 +1,23 @@
+# conversation template
+# OUTPUTS_TEXT_LIST: "llava/dataset/OUTPUTS_TEXT_LIST.json"
+INPUTS_TEXT_LIST: "llava/dataset/INPUTS_TEXT_LIST.json"
+
+# data
+DATA:
+# WARNING!!! Don't forget the '-' before each dataset, must be parsed as a list
+    - MuSTC: # same name of the dataset class
+        datapath: ${SCRATCH}/data/MUSTC_v1.0/preprocessed_redone
+        task: "ST" # one task per dataset, you can duplicate the dataset and change the task
+        languages: ["en-it"]
+        partitions:
+            test:
+                amount: ":100%"
+                min_duration: 1
+                max_duration: null
+                destination: "test"
+            test_he:
+                amount: ":100%"
+                min_duration: 1
+                max_duration: null
+                destination: "test"
+
