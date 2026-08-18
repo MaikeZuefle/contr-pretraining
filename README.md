@@ -1,6 +1,6 @@
 # Contrastive Learning for Task-Independent SpeechLLM-Pretraining
 
-<a href='http://arxiv.org/abs/2412.15712'><img src='https://img.shields.io/badge/Paper-Arxiv-red'> </a>
+<a href='https://aclanthology.org/2025.findings-acl.445/'><img src='https://img.shields.io/badge/Paper-ACL%20Anthology-red'> </a>
 
 Large language models (LLMs) excel in natural language processing but adapting these LLMs to speech processing tasks efficiently is not straightforward. Direct task-specific fine-tuning is limited by overfitting risks, data requirements, and computational costs. To address these challenges, we propose a scalable, two-stage training approach: (1) A task-independent speech pretraining stage using contrastive learning to align text and speech representations over all layers, followed by (2) a task-specific fine-tuning stage requiring minimal data. This approach outperforms traditional ASR pretraining and enables the model to surpass models specialized on speech translation and question answering while being trained on only 10% of the task-specific data.
 
@@ -72,3 +72,25 @@ The checkpoint folder name should start with `llava-`. Otherwise, it can't be lo
 ### Mixed-Speech-Text Inputs
 To obtain mixed-speech-text inputs, one needs to run the asr-pretrainig script and add the `--audio_nwp` flag. This will then create the mixed speech-text-input data, without starting the training. The training can be started with [scripts/pretrain/pretrain-mixed-nwp.sh](scripts/pretrain/pretrain-mixed-nwp.sh), after the data has been created.
 
+## Citation
+
+```
+@inproceedings{zufle-niehues-2025-contrastive,
+    title = "Contrastive Learning for Task-Independent {S}peech{LLM}-Pretraining",
+    author = {Z{\"u}fle, Maike  and
+      Niehues, Jan},
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2025",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-acl.445/",
+    doi = "10.18653/v1/2025.findings-acl.445",
+    pages = "8469--8490",
+    ISBN = "979-8-89176-256-5",
+}
+```
